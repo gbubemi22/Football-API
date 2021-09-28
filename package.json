@@ -1,0 +1,21 @@
+{
+  "name": "football-api",
+  "version": "1.0.0",
+  "description": "End point ",
+  "main": "server.js",
+  "scripts": {
+    
+    "start": "nodemon server.js"
+  },
+  "author": "Gbubemi22",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.7",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
