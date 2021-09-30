@@ -1,0 +1,10 @@
+API to add leagues , Teams, Players and make a player Captain.
+
+endPoint to get each league
+endPoint to get ALL leagues
+
+endPoint to get ALL Teams
+endPoint to get each Teams
+
+endPoint to get ALL players in a Teams
+endPoint to get EACH player in a Teams

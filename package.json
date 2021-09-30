@@ -4,7 +4,6 @@
   "description": "End point ",
   "main": "server.js",
   "scripts": {
-    
     "start": "nodemon server.js"
   },
   "author": "Gbubemi22",
