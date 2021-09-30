@@ -1,14 +1,13 @@
-const englishPremierLeague = require("../models/EnglishTeams");
+const ManchesterUTD = require("../models/ManchesterUTD");
 
 const router = require('express').Router();
 
-
-
+// POST PLAYER TO CLUB
 router.post('/', async (req, res) => {
-     const newEnglishTeam = new englishPremierLeague(req.body);
+     const newPlayer = new ManchesterUTD(req.body);
      try {
-          const savedteam = await newEnglishTeam.save();
-          res.status(200).json(savedteam);
+          const savedplayer = await newPlayer.save();
+          res.status(201).json(savedplayer);
          
         } catch (err) {
           res.status(500).json(err);
@@ -19,8 +18,8 @@ router.post('/', async (req, res) => {
 // GEt EACH CLUB IN PREMIER LEAGUE.....
 router.get('/find/:id',async (req, res) =>{
   try{
-     const newEnglishTeam = await englishPremierLeague.findById(req.params.id)
-     res.status(200).json(newEnglishTeam)
+     const savedplayer = await ManchesterUTD.findById(req.params.id)
+     res.status(200).json(savedplayer)
   }catch (error) {
     res.status(500).json(error)
   }
@@ -29,22 +28,22 @@ router.get('/find/:id',async (req, res) =>{
 // GET ALL ENGLISH_PREMIER_LEAGUE
 router.get("/", async (req, res) => {
   const qnew = req.query.new;
-  const qclubName = req.query.teamName;
+  const qplayername = req.query.playerName;
 
   try {
-  let clubs;
+  let players;
   if(qnew){
-    clubs = await englishPremierLeague.find().sort({
+    players = await ManchesterUTD.find().sort({
       createdAt: -1}).limit(5);
   
-  }  else if (qclubName) {
-    clubs = await englishPremierLeague.find({
-      teamName: {
-        $in: [qleagueName],   
+  }  else if (qplayername) {
+    players = await ManchesterUTD.find({
+      playerName: {
+        $in: [qplayername],   
     },
   });
   } else {
-    clubs = await englishPremierLeague.find();
+    players = await ManchesterUTD.find();
 
   }
   res.status(200).json(clubs);

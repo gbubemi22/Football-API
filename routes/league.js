@@ -5,7 +5,7 @@ const League = require("../models/Leagues");
 const router = require("express").Router();
 
 
-
+// CREATE LEAGUE
 router.post("/add", async (req, res) => {
  const newLeague = new League(req.body);
  try {
@@ -41,7 +41,7 @@ router.get("/", async (req, res) => {
 
       if(qNew) {
          leagues = await League.find().sort({
-            createdAt: -1 }).limit(1);
+            createdAt: -1 }).limit(5);
          
       } else if (qleagueName){
          leagues = await League.find({

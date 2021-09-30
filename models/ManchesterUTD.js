@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const PlayresSchema =  mongoose.Schema({
   team_id:{type:String,required: true},
   league_id:{type:String,required: true},
-  playerName:{type:Array,required: true, unique: true}, 
+  playerName:{type: String ,required: true, unique: true}, 
   age:{type:Number,required: true},
   nationality:{type:String},
   position:{type:String},
@@ -19,4 +19,4 @@ const PlayresSchema =  mongoose.Schema({
   
    
 
-module.exports = mongoose.model('ArsenalPlayers', PlayresSchema); 
+module.exports = mongoose.model('ManchesterUtd', PlayresSchema); 
